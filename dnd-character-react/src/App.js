@@ -1,17 +1,22 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CharacterList from './pages/CharacterList/CharacterList';
+import Home from './pages/Home';
+import Layout from './pages/Layout';
+import ScoresForm from './pages/CreateCharacter/ScoresForm';
 
 function App() {
   return (
     <div className="App">
-      <nav>
-      <h1 style={{ textAlign:'center' }}>DND Character Build</h1>
-        <ul>
-          <li>Home</li>
-          <li>Create Character</li>
-          <li>My Characters</li>
-        </ul>
-      </nav>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="CharacterList" element={<CharacterList />} />
+            <Route path="Create" element={<ScoresForm />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
