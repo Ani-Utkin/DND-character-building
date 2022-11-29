@@ -1,13 +1,13 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const ScoresForm = () => {
 
-    var [charisma, setCharisma] = useState("");
-    var [wisdom, setWisdom] = useState("");
-    var [intelligence, setIntelligence] = useState("");
-    var [strength, seStrength] = useState("");
-    var [dexterity, setDexterity] = useState("");
-    var [constitution, setConstitution] = useState("");
+    var [charisma, setCharisma] = useState(0);
+    var [wisdom, setWisdom] = useState(0);
+    var [intelligence, setIntelligence] = useState(0);
+    var [strength, seStrength] = useState(0);
+    var [dexterity, setDexterity] = useState(0);
+    var [constitution, setConstitution] = useState(0);
 
     var [firstPrior, setPrior] = useState("");
     var [secPrior, setSecPrior] = useState("");
@@ -23,20 +23,21 @@ const ScoresForm = () => {
     }
     
     return(
+
         <>
             <h1>Ability Scores</h1>
             <form>
                 <div>
                     <label>Add 1st Priority
                         <select onChange={handleStat1Change}>
-                            <option value="">---- Select Stat ----</option>
+                            <option value={firstPrior}>---- Select Stat ----</option>
                             {ab.map((stat) => <option key={stat} value={stat}>{stat}</option>)}
                         </select>
                     </label>
 
                     <label>Add 2nd Priority
                         <select onChange={handleStat2Change}>
-                            <option value="">---- Select Stat ----</option>
+                            <option value={secPrior}>---- Select Stat ----</option>
                             {ab.map((stat) => <option key={stat} value={stat}>{stat}</option>)}
                         </select>
                     </label>
@@ -55,7 +56,30 @@ const ScoresForm = () => {
 
             <div>
                 <ul>
-                    {ab.map((stat) => <li>{stat}: </li>)}
+                    <li>
+                        <span>Charisma: </span>
+                        <span>{charisma}</span>
+                    </li>
+                    <li>
+                        <span>Wisdom: </span>
+                        <span>{wisdom}</span>
+                    </li>
+                    <li>
+                        <span>Intelligence: </span>
+                        <span>{intelligence}</span>
+                    </li>
+                    <li>
+                        <span>Strength: </span>
+                        <span>{strength}</span>
+                    </li>
+                    <li>
+                        <span>Dexterity: </span>
+                        <span>{dexterity}</span>
+                    </li>
+                    <li>
+                        <span>Constitution: </span>
+                        <span>{constitution}</span>
+                    </li>
                 </ul>
             </div>
         </>
