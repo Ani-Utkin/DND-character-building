@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CharacterList from './pages/CharacterList/CharacterList';
 import Home from './pages/Home';
 import Layout from './pages/Layout';
-import ScoresForm from './pages/CreateCharacter/ScoresForm';
+import AbilityScores from './pages/CreateCharacter/AbilityScores';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="CharacterList" element={<CharacterList />} />
-            <Route path="Create" element={<ScoresForm />} />
+            <Route path="Create" element={< AbilityScores/>} />
           </Route>
         </Routes>
       </BrowserRouter>
