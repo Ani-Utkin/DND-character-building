@@ -4,6 +4,7 @@ import CharacterList from './pages/CharacterList/CharacterList';
 import Home from './pages/Home';
 import Layout from './pages/Layout';
 import AbilityScores from './pages/CreateCharacter/AbilityScores';
+import ScoresForm from './pages/CreateCharacter/ScoresForm';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="CharacterList" element={<CharacterList />} />
             <Route path="Create" element={< AbilityScores/>} />
+            <Route path="Roll" element={<ScoresForm/>} />
           </Route>
         </Routes>
       </BrowserRouter>

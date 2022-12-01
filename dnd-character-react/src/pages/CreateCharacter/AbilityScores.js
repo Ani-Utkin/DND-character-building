@@ -45,12 +45,12 @@ export default class AbilityScores extends React.Component{
         });
 
         this.setState({
-            strMod: this.modifierAdjuster(this.state.str),
-            dexMod: this.modifierAdjuster(this.state.dex),
-            conMod: this.modifierAdjuster(this.state.con),
-            intMod: this.modifierAdjuster(this.state.int),
-            wisMod: this.modifierAdjuster(this.state.wis),
-            charMod: this.modifierAdjuster(this.state.char),
+            strMod: this.modifierAdjuster(event.target[0].value),
+            dexMod: this.modifierAdjuster(event.target[1].value),
+            conMod: this.modifierAdjuster(event.target[2].value),
+            intMod: this.modifierAdjuster(event.target[3].value),
+            wisMod: this.modifierAdjuster(event.target[4].value),
+            charMod: this.modifierAdjuster(event.target[5].value),
         });
 
     }

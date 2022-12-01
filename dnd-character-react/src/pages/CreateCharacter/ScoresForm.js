@@ -1,18 +1,40 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
+import "./ScoresForm.css";
 
 const ScoresForm = () => {
-
-    var [charisma, setCharisma] = useState(0);
-    var [wisdom, setWisdom] = useState(0);
-    var [intelligence, setIntelligence] = useState(0);
-    var [strength, seStrength] = useState(0);
-    var [dexterity, setDexterity] = useState(0);
-    var [constitution, setConstitution] = useState(0);
 
     var [firstPrior, setPrior] = useState("");
     var [secPrior, setSecPrior] = useState("");
 
-    var ab = ["charisma", "wisdom", "intelligence", "strength", "dexterity", "constitution"];
+    var ab = {
+        "charisma": 0,
+        "wisdom": 0,
+        "intelligence": 0,
+        "strength": 0,
+        "dexterity": 0,
+        "constitution": 0
+    };
+
+    var dice_rolls = [
+        "../../images/dice_sides_1.png",
+        "../../images/dice_sides_2.png",
+        "../../images/dice_sides_3.png",
+        "../../images/dice_sides_4.png",
+        "../../images/dice_sides_5.png",
+        "../../images/dice_sides_6.png"
+    ];
+
+
+    const diceDisplay = () =>{
+        return (
+            <>
+                <span><img width={100} height={100} alt="side of a die" src={require("../../images/dice_sides_1.png")}/></span>
+                <span><img width={100} height={100} alt="side of a die" src={require("../../images/dice_sides_1.png")}/></span>
+                <span><img width={100} height={100} alt="side of a die" src={require("../../images/dice_sides_1.png")}/></span>
+                <span><img width={100} height={100} alt="side of a die" src={require("../../images/dice_sides_1.png")}/></span>
+            </>
+        );
+    }
 
     const handleStat1Change = (e) =>{
         setPrior(e.target.value);
@@ -26,62 +48,39 @@ const ScoresForm = () => {
 
         <>
             <h1>Ability Scores</h1>
-            <form>
-                <div>
-                    <label>Add 1st Priority
-                        <select onChange={handleStat1Change}>
-                            <option value={firstPrior}>---- Select Stat ----</option>
-                            {ab.map((stat) => <option key={stat} value={stat}>{stat}</option>)}
-                        </select>
-                    </label>
+            <section>
+                <form>
 
-                    <label>Add 2nd Priority
-                        <select onChange={handleStat2Change}>
-                            <option value={secPrior}>---- Select Stat ----</option>
-                            {ab.map((stat) => <option key={stat} value={stat}>{stat}</option>)}
-                        </select>
-                    </label>
-                </div>
 
-                <div>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                </div>
-                <div>
-                    <button>Roll</button>
-                </div>
-            </form>
+                    <div className="priorities">
 
-            <div>
-                <ul>
-                    <li>
-                        <span>Charisma: </span>
-                        <span>{charisma}</span>
-                    </li>
-                    <li>
-                        <span>Wisdom: </span>
-                        <span>{wisdom}</span>
-                    </li>
-                    <li>
-                        <span>Intelligence: </span>
-                        <span>{intelligence}</span>
-                    </li>
-                    <li>
-                        <span>Strength: </span>
-                        <span>{strength}</span>
-                    </li>
-                    <li>
-                        <span>Dexterity: </span>
-                        <span>{dexterity}</span>
-                    </li>
-                    <li>
-                        <span>Constitution: </span>
-                        <span>{constitution}</span>
-                    </li>
-                </ul>
-            </div>
+                        <label>Add 1st Priority
+                            <select onChange={handleStat1Change}>
+                                <option value={firstPrior}>---- Select Stat ----</option>
+                                {Object.keys(ab).map((stat, value) => <option key={stat} value={stat}>{stat}</option>)}
+                            </select>
+                        </label>
+
+                        <label style={{marginLeft:100}}>Add 2nd Priority
+                            <select onChange={handleStat2Change}>
+                                <option value={secPrior}>---- Select Stat ----</option>
+                                {Object.keys(ab).map((stat, value) => <option key={stat} value={stat}>{stat}</option>)}
+                            </select>
+                        </label>
+                    </div>
+
+                    <div>
+                        {diceDisplay()}
+                    </div>
+
+
+                    <div>
+                        <button>Roll</button>
+                    </div>
+
+
+                </form>
+            </section>
         </>
     );
 }
