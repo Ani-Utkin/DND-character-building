@@ -3,7 +3,6 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: green;
 }
 
 form > div{
@@ -55,4 +54,22 @@ button{
     border-color: black;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.ability-scores{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.ability-scores > div{
+    margin: 1rem;
+}
+
+.ability-scores > div > span{
+    background-color: pink;
 }

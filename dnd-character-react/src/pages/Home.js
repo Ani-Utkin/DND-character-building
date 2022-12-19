@@ -1,7 +1,14 @@
+import "./Home.css";
+
 const Home = () =>{
     return(
         <>
-            <h1>This is the Home Page</h1>
+            <section className="home">
+            <span className="home-content">
+            <h1>DND Character Creator</h1>
+            <p>For all your player creation needs.</p>
+            </span>
+            </section>
         </>
     );
 }

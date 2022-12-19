@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CharacterList from './pages/CharacterList/CharacterList';
 import Home from './pages/Home';
 import Layout from './pages/Layout';
-import AbilityScores from './pages/CreateCharacter/AbilityScores';
 import ScoresForm from './pages/CreateCharacter/ScoresForm';
 
 function App() {
@@ -14,8 +13,8 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="CharacterList" element={<CharacterList />} />
-            <Route path="Create" element={< AbilityScores/>} />
-            <Route path="Roll" element={<ScoresForm/>} />
+            {/* <Route path="Create" element={< AbilityScores/>} /> */}
+            <Route path="Create" element={<ScoresForm/>} />
           </Route>
         </Routes>
       </BrowserRouter>

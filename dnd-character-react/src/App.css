@@ -10,11 +10,22 @@ html {
 body{
   padding: 0;
   margin: 0;
+  background-image: url(images/background.jpg);
+  background-color: #cccccc;
+}
+
+h1, h2, h3, h4, p {
+  padding: 0;
+  margin: 0;
 }
 
 nav{
   display: flex;
   justify-content: space-between;
+  background-color: black;
+  align-items: center;
+  color: white;
+  padding: 0.5rem;
 }
 
 nav > ul{
@@ -31,7 +42,12 @@ a {
 }
 
 a:visited{
-  color: black;
+  color: white;
+}
+
+a:hover{
+  color: red;
+  /*text-decoration: underline red;*/
 }
 
 li{

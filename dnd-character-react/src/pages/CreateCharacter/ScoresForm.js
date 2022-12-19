@@ -1,5 +1,6 @@
 import {useState} from "react";
 import "./ScoresForm.css";
+import AbilityScores from "./AbilityScores";
 
 const ScoresForm = () => {
 
@@ -15,14 +16,14 @@ const ScoresForm = () => {
         "constitution": 0
     };
 
-    var dice_rolls = [
-        "../../images/dice_sides_1.png",
-        "../../images/dice_sides_2.png",
-        "../../images/dice_sides_3.png",
-        "../../images/dice_sides_4.png",
-        "../../images/dice_sides_5.png",
-        "../../images/dice_sides_6.png"
-    ];
+    // var dice_rolls = [
+    //     "../../images/dice_sides_1.png",
+    //     "../../images/dice_sides_2.png",
+    //     "../../images/dice_sides_3.png",
+    //     "../../images/dice_sides_4.png",
+    //     "../../images/dice_sides_5.png",
+    //     "../../images/dice_sides_6.png"
+    // ];
 
 
     const diceDisplay = () =>{
@@ -80,6 +81,9 @@ const ScoresForm = () => {
 
 
                 </form>
+
+                <AbilityScores />
+                
             </section>
         </>
     );
